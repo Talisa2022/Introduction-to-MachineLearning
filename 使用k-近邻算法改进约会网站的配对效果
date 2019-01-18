@@ -1,0 +1,41 @@
+C:\Users\微甜心语>cd /d D:\My University\MachineLearning\Machine Learning in Action\Code\Ch02
+D:\My University\MachineLearning\Machine Learning in Action\Code\Ch02>python
+Python 2.7.15 (v2.7.15:ca079a3ea3, Apr 30 2018, 16:30:26) [MSC v.1500 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import kNN
+>>> group,labels = kNN.createDataSet()
+>>> group
+array([[1. , 1.1],
+       [1. , 1. ],
+       [0. , 0. ],
+       [0. , 0.1]])
+>>> labels
+['A', 'A', 'B', 'B']
+>>> reload (kNN)
+<module 'kNN' from 'kNN.pyc'>
+>>> datingDataMat, datingLabels = kNN.file2matrix('datingTestSet2.txt')
+>>> datingDataMat
+array([[4.0920000e+04, 8.3269760e+00, 9.5395200e-01],
+       [1.4488000e+04, 7.1534690e+00, 1.6739040e+00],
+       [2.6052000e+04, 1.4418710e+00, 8.0512400e-01],
+       ...,
+       [2.6575000e+04, 1.0650102e+01, 8.6662700e-01],
+       [4.8111000e+04, 9.1345280e+00, 7.2804500e-01],
+       [4.3757000e+04, 7.8826010e+00, 1.3324460e+00]])
+>>> datingLabels[0:20]
+[3, 2, 1, 1, 1, 1, 3, 3, 1, 3, 1, 1, 2, 1, 1, 1, 1, 1, 2, 3]
+>>> reload (kNN)
+<module 'kNN' from 'kNN.pyc'>
+>>> normMat,ranges,minVals = kNN.autoNorm(datingDataMat)
+>>> normMat
+array([[0.44832535, 0.39805139, 0.56233353],
+       [0.15873259, 0.34195467, 0.98724416],
+       [0.28542943, 0.06892523, 0.47449629],
+       ...,
+       [0.29115949, 0.50910294, 0.51079493],
+       [0.52711097, 0.43665451, 0.4290048 ],
+       [0.47940793, 0.3768091 , 0.78571804]])
+>>> ranges
+array([9.1273000e+04, 2.0919349e+01, 1.6943610e+00])
+>>> minVals
+array([0.      , 0.      , 0.001156])
